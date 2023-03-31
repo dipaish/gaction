@@ -7,6 +7,10 @@ on:
     branches: [main]
     types: [opened]
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   check_for_first_interaction:
     runs-on: ubuntu-latest

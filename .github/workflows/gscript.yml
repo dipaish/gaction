@@ -1,20 +1,16 @@
-name: Comment on Issues and Pull Requests
+name: Greetings
 
-on:
-  issues:
-    types: [opened]
-  pull_request:
-    types: [opened]
+on: [pull_request_target, issues]
 
 jobs:
-  comment_on_issues_and_prs:
+  greeting:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Comment on issue or pull request
-      uses: peter-evans/create-or-update-comment@v1
+    - uses: actions/first-interaction@v1
       with:
-        issue-number: ${{ github.event.issue.number }}
-        body: |
-          Thanks for opening this issue/pull request! We'll take a look as soon as possible.
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Message that will be displayed on users' first issue"
+        pr-message: "Message that will be displayed on users' first pull request"

@@ -1,17 +1,16 @@
-name: My first workflow
-on: [push]
+name: My first workflow # The name of the workflow, can be any string
+on: [push] # The event that triggers this workflow - in this case, a push to the default branch
 
-jobs:
-  run_command:
-    runs-on: ubuntu-latest
-    steps:
-      - name: run echo command
-        run:  echo "Hello World"
-      - name: run date command
-      #to run multiple commands use pipe sign
-        run:  |
-         echo "Hello World"
-         echo "This is Deepak"
+jobs: # The jobs that run in this workflow
+  run_command: # The name of the job
+    runs-on: ubuntu-latest # The type of machine to run the job on, in this case the latest version of Ubuntu
+    steps: # The individual steps of the job
+      - name: run echo command # The name of the step
+        run:  echo "Hello World" # The command to run in this step, in this case just an echo command that prints "Hello World"
+      - name: run date command # The name of the step
+        run:  | # The command(s) to run in this step, in this case multiple commands are run using a pipe sign
+         echo "Hello World" # The first command that prints "Hello World"
+         echo "This is Deepak" # The second command that prints "This is Deepak"
           
 
         

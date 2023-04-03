@@ -1,0 +1,17 @@
+name: My first workflow
+on: [push]
+
+jobs:
+  run_command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run echo command
+        run:  echo "Hello World"
+      - name: run date command
+      #to run multiple commands use pipe sign
+        run:  |
+         echo "Hello World"
+         echo "This is Deepak"
+          
+
+        

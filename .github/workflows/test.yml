@@ -7,7 +7,7 @@ jobs: # The jobs that run in this workflow
     steps: # The individual steps of the job
       - name: run echo command # The name of the step
         run:  echo "Hello World" # The command to run in this step, in this case just an echo command that prints "Hello World"
-      - name: run date command # The name of the step
+      - name: run multiple commands # The name of the step
         run:  | # The command(s) to run in this step, in this case multiple commands are run using a pipe sign
          echo "Hello World" # The first command that prints "Hello World"
          echo "This is Deepak" # The second command that prints "This is Deepak"
